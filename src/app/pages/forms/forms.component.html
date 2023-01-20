@@ -1,0 +1,56 @@
+<p>forms works!</p>
+<mat-grid-list cols="4">
+    
+    <mat-grid-tile class="Card"
+     *ngFor="let tile of tiles"
+     [colspan]="tile.cols"
+     [rowspan]="tile.rows"
+    ><mat-card class="card-login">
+            <mat-grid-list cols="1" rowHeight="60px">
+                <mat-grid-tile>
+                    <h1 id="card-login-header">Register</h1>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <mat-card-content>
+            <form [formGroup]="Form" action="" class="card-form">
+                <div class="card-form-content">
+                    <mat-form-field class="card-form-input" appearance="outline">
+                        <mat-label>Enter user</mat-label>
+                        <input matInput placeholder="@User" formControlName="name" required>
+                        <mat-hint>User</mat-hint>
+                        <mat-error *ngIf="Form.invalid">Invalid user</mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="card-form-content">
+                    <mat-form-field class="card-form-input" appearance="outline">
+                        <mat-label>Enter password</mat-label>
+                        <mat-hint>Password</mat-hint>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" required>
+                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="Form.invalid">Password is invalid</mat-error>
+                      </mat-form-field>
+                </div>
+              <mat-grid-list cols="1" rowHeight="60px">
+                <mat-grid-tile>
+                    <button type="submit" mat-raised-button color="primary" [disabled]="Form.invalid" (click)="RegisterUser()">Saving user</button>
+                    <!-- {{Form.valid}} -->
+                </mat-grid-tile>
+              </mat-grid-list>
+              <mat-grid-list cols="1" rowHeight="40px">
+                <mat-grid-tile>
+                    <button type="submit" mat-raised-button color="warn" (click)="deleteDatabase()">Delete database</button>
+                    <!-- {{Form.valid}} -->
+                </mat-grid-tile>
+              </mat-grid-list>
+            </form>
+ 
+        </mat-card-content>
+
+    </mat-card>
+    
+   
+    </mat-grid-tile>
+    
+</mat-grid-list>

@@ -1,0 +1,17 @@
+.card-login{
+    box-shadow: 2px 2px 8px 2px rgb(131, 131, 131);
+    width: 60%;
+   
+}
+.card-form-input{
+    width: 90%;
+    margin: 5px 5%;
+}
+#card-login-header{
+    font-weight: 900;
+    margin: 5px 0;
+}
+.Card{
+    height: 200px;
+  
+}

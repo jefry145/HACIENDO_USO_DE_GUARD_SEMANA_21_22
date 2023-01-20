@@ -1,0 +1,51 @@
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav mode="over" class="app-sidenav" color="primary">
+
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <span>Account</span>
+          <span class="app-toolbar-filler"></span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <button mat-raised-button color="accent"  routerLink="/Account" class="app-sidebar-button">
+            My Account
+          </button>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <span>Log out</span>
+          <span class="app-toolbar-filler"></span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <button mat-raised-button color="warn" routerLink="/" (click)="closeSesion()" class="app-sidebar-button">
+            Close my account
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+    </mat-sidenav>
+  
+  <mat-toolbar class="navbar" color="primary">
+      <button mat-button class="app-menu-button" (click)="sidenav.toggle()">
+        <i class="material-icons">menu</i>
+      </button>
+      <a mat-button class="Link" routerLink="/">Home</a>
+      <a mat-button class="Link" routerLink="/Postds">PosTds</a>
+      <div class="" *ngIf="show">
+        <a mat-button class="Link" routerLink="/Users">Users</a>
+        <a mat-button class="Link" routerLink="/Forms">Forms</a>
+      </div>
+      
+  
+  </mat-toolbar>
+  <div class="app-content">
+   <mat-card> 
+    <mat-card-content (click)="Validacion()" class="body">
+      <router-outlet></router-outlet>  
+    </mat-card-content>
+   </mat-card>
+  </div>
+
+
+</mat-sidenav-container>
+
